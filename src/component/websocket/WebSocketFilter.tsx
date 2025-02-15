@@ -22,7 +22,6 @@ const WebSocketFilter = () => {
 
         ws.onopen = () => {
             console.log('Połączono z WebSocketem')
-            toast.error("");
             //setErrorMessage("");
         };
 
@@ -31,7 +30,7 @@ const WebSocketFilter = () => {
                 const parsedData = JSON.parse(event.data);
                 //console.log(JSON.stringify(parsedData, null, 2));
                 if (parsedData?.type === "ERROR") {
-                    toast.error(parsedData.message);
+                    toast.error(parsedData.message || "Odebrane dane nie pasują do spodziewanego typu.");
                     //setErrorMessage(parsedData.message || "Wystąpił nieznany błąd");
                 } else {
                     setData((prev) => [...(prev || []), parsedData].slice(-visibleItems));
@@ -39,14 +38,14 @@ const WebSocketFilter = () => {
             } catch (error) {
                 console.error('Błąd parsowania danych:', error);
                 toast.error(error.message);
-                //setErrorMessage("Błąd parsowania danych z WebSocket: " + (error as Error).message);
+                //setErrorMessage("Błąd parsowania danych z WebSocket");
             }
         };
 
         ws.onerror = (error) => {
             console.error('Błąd WebSocket:', error);
             toast.error("Błąd połączenia z serwerem.");
-            //setErrorMessage("Błąd WebSocket – sprawdź konsolę po więcej informacji.");
+            //setErrorMessage("Błąd WebSocket");
         };
 
         ws.onclose = () => {

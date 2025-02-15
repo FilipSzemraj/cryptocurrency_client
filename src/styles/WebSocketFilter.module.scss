@@ -1,0 +1,53 @@
+@use "./mixins" as *;
+
+.button{
+  @include button;
+  margin:0.5rem;
+}
+.formWrapper {
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.inputContainer {
+  width:100%;
+  display:flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  background-color: #222;
+  padding: 0.5rem;
+  border-radius: 0.125rem;
+}
+
+.inputField {
+  padding: 1.5rem;
+  border: 1px solid #555;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 70px;
+  text-align: center;
+}
+
+.selectField {
+  padding: 10px;
+  border: 1px solid #555;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}

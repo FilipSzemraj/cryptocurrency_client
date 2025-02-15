@@ -1,0 +1,56 @@
+.gridTable {
+  border-radius:0.5rem;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  width: 100%;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.gridHeader {
+  border-radius:0.5rem 0.5rem 0 0;
+  display: grid;
+  background-color: #000;
+}
+
+.gridHeaderCell {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #555;
+  font-weight: bold;
+}
+
+.gridBody {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.gridRow {
+  display: grid;
+  border-bottom: 1px solid #555;
+
+}
+
+.gridCell {
+  padding: 10px;
+}
+
+.gridRow:nth-child(even) {
+  background-color: #333;
+}
+
+.gridRow:nth-child(odd) {
+  background-color: #222;
+}
+
+
+
+.gridRow:hover .gridCell {
+}
+
+.gridBody > .gridRow:first-child{
+  border-radius:0 0 0.5rem 0.5rem;
+  border-bottom: 0;
+
+}
+
